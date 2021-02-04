@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
 
+The project was created as a demonstration of MEAN development skills. 
+
+The project contains a node directory.. the index.js can be run as `node index.js` or `nodemon index.js` with nodemonitor
+
+The backend is a mongodb server which is not included here. This aspect can be changed as per the application. 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
