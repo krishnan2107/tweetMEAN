@@ -1,0 +1,27 @@
+<div class="col s12" >
+  <div class="card blue-grey darken-1 card-content white-text">
+    <table class = "highlight">
+      <thead>
+      <tr>
+        <th>Sentiment</th>
+        <th>Count</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let sentiment of _tweet.sentimentModels">
+      <tr>
+        <td>{{sentiment._id}}</td>
+        <td>{{sentiment.count}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="chart-container"  >
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend"></canvas>
+  </div>
+</div>

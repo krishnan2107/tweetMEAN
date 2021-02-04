@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col ">
+    <div *ngFor="let tweet of tweetService.tweets |
+    paginate: {id:'listing_pagination', itemsPerPage: 4, currentPage: pageNumber, totalItems: totalRecords}">
+      <div class="card">
+        <div class="card-content white-text" >
+          <span class="card-title">{{tweet.user[0].name}}</span>
+          <p>{{tweet.text}}</p>
+          <p>{{tweet.user[0].location}}</p>
+        </div>
+        <div class="card-action white-text">
+          <tr class="sentiment">
+            <td>{{tweet.sentiment}}</td>
+            <!--          <a href="#">{{tweet.sentiment}}</a>-->
+            <td>{{tweet.created_at | date:'yyyy-MM-dd HH:mm:ss Z'}}</td>
+            <!--          <a href="#">{{tweet.created_at}}</a>-->
+          </tr>
+        </div>
+      </div>
+    </div>
+    <div>
+      <pagination-controls id = "listing_pagination" maxSize="5" directionLinks="true" (pageChange)="pageNumber = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
