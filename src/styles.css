@@ -58,3 +58,15 @@ a.action-btn:hover{
     bottom: 10%;
     left:7%;
   }
+
+th {
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+
+tr.sentiment{
+  font-style: italic;
+  color: yellowgreen;
+}

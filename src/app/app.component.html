@@ -1,8 +1,12 @@
+<h1> Insight 6 Demo App </h1>
 <div class="row">
-  <div class="col s7">
-    <app-tweetboard></app-tweetboard>
-  </div>
-  <div class="col s5">
-    <app-tweetpie></app-tweetpie>
-  </div>
+
+<nav>
+  <ul>
+    <li><a routerLink="/tweet-graph" routerLinkActive="active">Visualisation</a></li>
+    <li><a routerLink="/tweet-board" routerLinkActive="active">Tweets data</a></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
 </div>

@@ -7,6 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { TweetpieComponent } from './tweetpie/tweetpie.component';
 import {ChartsModule} from "ng2-charts";
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ChartsModule} from "ng2-charts";
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    ChartsModule
+    ChartsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
