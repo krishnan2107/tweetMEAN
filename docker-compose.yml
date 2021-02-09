@@ -9,11 +9,15 @@ services:
     ports:
       - "3200:3200"
   mongo:
-      image: mongo
+      build:         
+        context: "./NodeReader/docker/mongo/"
+        #dockerfile: ./NodeReader/docker/mongo/Dockerfile
       restart: always
       environment:
         MONGO_INITDB_ROOT_USERNAME: root
         MONGO_INITDB_ROOT_PASSWORD: example
+      volumes: 
+        - mongodbdata:/data/db
       expose: 
         - "27017"
   mongo-express:
@@ -24,3 +28,6 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    
+volumes: 
+  mongodbdata: ~
