@@ -6,5 +6,4 @@ RUN npm cache verify
 RUN npm install
 RUN pwd
 COPY . /usr/src/app
-RUN  ls
 ENTRYPOINT ./startExpress.sh
