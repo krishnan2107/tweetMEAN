@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 const express = require('express');
 
 var router = express.Router();
@@ -19,12 +21,24 @@ const agg = [
   }
 ];
 
+router.get('/tweets',((req, res) => {
+  Tweet.find((err, docs) => 
+  {
+    console.log("hit new tweets");
+    if(!err) { 
+      res.send(docs); 
+    }
+    else { console.error('Error in Retrieving tweets:'+JSON.stringify(err, undefined,2));}
+  });
+}));
+
 
 //localhost:3200/tweets
 router.get('/',((req, res) => {
   Tweet.find((err, docs) => {
+    console.log("hit tweets");
     if(!err) { res.send(docs); }
-    else { console.log('Error in Retrieving tweets:'+JSON.stringify(err, undefined,2));}
+    else { console.error('Error in Retrieving tweets:'+JSON.stringify(err, undefined,2));}
   });
 }));
 
