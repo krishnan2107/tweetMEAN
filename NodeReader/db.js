@@ -1,6 +1,9 @@
+/*jshint esversion: 6 */
+
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mongo:27017/tweets', {useNewUrlParser:true, useUnifiedTopology:true}, (err) => {
+mongooseOpts = { useNewUrlParser:true, useUnifiedTopology:true};
+mongoose.connect('mongodb://mongo:27017/tweets',mongooseOpts, (err) => {
   if(!err)
     console.log("Mongo DB Connected");
   else
